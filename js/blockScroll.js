@@ -165,7 +165,7 @@
         $this.height('auto');
         if($this.height() < windowHeight) 
         {
-          var margin = windowHeight/2 - $this.height()/2;
+          var margin = windowHeight/4 - $this.height()/4;
           $this.height(windowHeight-margin);
           $this.css('padding-top', margin + "px");
           var $innerDiv = $($this.children().filter('div')[0]);
