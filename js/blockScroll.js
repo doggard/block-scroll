@@ -185,7 +185,8 @@
     }
     
     return {
-      goto: gotoView
+      goto: gotoView,
+      currentDiv: activeDiv
     };
   }
 
