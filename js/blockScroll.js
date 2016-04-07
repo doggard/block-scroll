@@ -100,6 +100,7 @@
       if(activeDiv > 0 && !activelyScrolling)
       {
         gotoDiv(activeDiv-1);
+        
       }
     }
 
@@ -113,6 +114,13 @@
     
     function gotoDiv(number)
     {
+      //Adding active classes to current div
+      var navItem = $('ul#navigation li span').toArray();
+          $.each(navItem, function(index, value){
+            $(value).removeClass('active');
+          });
+      $(navItem[number]).addClass('active');
+      
       if(number == 0)
         $("#block-up-arrow").hide();
       else
@@ -185,8 +193,7 @@
     }
     
     return {
-      goto: gotoView,
-      currentDiv: activeDiv
+      goto: gotoView
     };
   }
 
