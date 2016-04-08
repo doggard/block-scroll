@@ -115,11 +115,11 @@
     function gotoDiv(number)
     {
       //Adding active classes to current div
-      var navItem = $('ul#navigation li span').toArray();
+      var navItem = $('ul#navigation li a').toArray();
           $.each(navItem, function(index, value){
             $(value).removeClass('active');
           });
-      $(navItem[number]).addClass('active');
+      $(navItem[number]).addClass('active visited');
       
       if(number == 0)
         $("#block-up-arrow").hide();
