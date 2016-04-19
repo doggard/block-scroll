@@ -24,6 +24,7 @@
     var lastScrollPos;
     var activelyScrolling = false;
     var activeBackground= 0;
+    var closeBtn = $('.glyphicon-remove');
     
     // Ensure that all of the elements are hidden just in case the css is not setup properly
     if(settings.fadeBlocks)
@@ -86,11 +87,11 @@
           }
       });
       $(window).bind('mousewheel', function(e){
-        if(e.originalEvent.wheelDelta > 119) {
-          goUp();
-        }
-        else if (e.originalEvent.wheelDelta < -119) {
+        if (e.originalEvent.wheelDelta < -119) {
           goDown();
+        }
+        else {
+          goUp();
         }
       });
     }
@@ -100,7 +101,7 @@
       if(activeDiv > 0 && !activelyScrolling)
       {
         gotoDiv(activeDiv-1);
-        
+        closeBtn.trigger('click');
       }
     }
 
@@ -109,6 +110,7 @@
       if(activeDiv < totalDivs - 1 && !activelyScrolling) 
       {
         gotoDiv(activeDiv+1);
+        closeBtn.trigger('click');
       }
     }
     
