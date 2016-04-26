@@ -141,6 +141,7 @@
         });
       });
       calcTriggers();
+      closeBtn.trigger('click');
     }
 
     function calcTriggers()
